@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flights</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <a href="/flights">Return to Manifest</a>
+    <h2>Enter New Flight</h2>
+<form action="/flights" method="POST">
+  <label>Airline:
+    <select name="airline">
+        <option value="American">American</option>
+        <option value="Delta">Delta</option>
+        <option value="Southwest">Southwest</option>
+        <option value="United">United</option>
+      </select>
+  </label><br>
+  <label>Airport:
+    <select name="airport">
+        <option value="ATL">ATL</option>
+        <option value="DFW">DWF</option>
+        <option value="DEN">DEN</option>
+        <option value="LAX">LAX</option>
+        <option value="SAN">SAN</option>
+      </select>
+  </label><br>
+  <label>Flight No.:
+    <input type="text" name="flightNo" maxlength="4">
+  </label><br>
+  <label for="meeting-time">Departure Date:
+    <input type="datetime-local" name="departure"
+    value="2021-08-20T00:00" min="2021-08-20T00:00">
+  </label>
+  <br>
+  <input type="submit" value="Add Flight">
+</form>
+</body>
+</html>
