@@ -1,35 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-  <title>Mongoose Flights</title>
-</head>
-<body>
-    <a href="/">Home</a> 
+<%- include('../partials/header') %>
+
+    
   <h1>Flight Manifest</h1>
   <table>
     <thead>
       <tr>
+        <th>Delete</th>
         <th>Airline</th>
         <th>Airport</th>
         <th>Flight No.</th>
         <th>Departure</th>
-        <th>Flight Passed</th>
+        <th>Flight Status</th>
       </tr>
     </thead>
     <tbody>
       <!-- Write the line of EJS to iterate over movies using forEach -->
       <% flightDocs.forEach(function(f) { %>
         <tr>
+          <td>
+            <form action="/flights/<%= f._id %>?_method=DELETE"
+              method="POST" class="delete-form"
+              >
+            <button type="submit">X</button>
+            </form>
+          </td>
           <td><%= f.airline %></td>
           <td><%= f.airport %></td>
           <td><%= f.flightNo %></td>
           <td><%= f.departs %></td>
-          <td><%= f.passed ? 'Departed' : 'On Time' %></td>
-          
+          <td><%= f.status ? 'Departed' : 'On Time' %></td>
+          <td><a href="/flights/<%=f._id%>">Details</a></td>
           
         </tr>
       <!-- Close the forEach using EJS here -->
@@ -37,5 +37,5 @@
     </tbody>
   </table><br>
   <a href="/flights/new">Add New Flight</a>
-</body>
-</html>
+
+<%- include('../partials/footer') %>
