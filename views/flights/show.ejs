@@ -1,21 +1,19 @@
   
 <%- include('../partials/header') %>
-
+<div class="boxtwo">
+  <h1>Flight Information</h1>
 <section id="show-page">
-  <div>Airport: </div>
-  <div><%= flight.airport %></div>
-  <div>Airline: </div>
-  <div><%= flight.airline %></div>
-  <div>Flight No.: </div>
-  <div><%= flight.flightNo %></div>
-  <div>Departure: </div>
-  <div><%= flight.departs %></div>
-  <div>Flight Status: </div>
-  <div><%= flight.status ? 'Departed' : 'On Time' %></div>
+  
+  <div>Airport: <%= flight.airport %></div>
+  <div>Airline: <%= flight.airline %></div>
+  <div>Flight No.: <%= flight.flightNo %></div>
+  <div>Departure: <%= flight.departs %></div>
+  <div>Flight Status: <%= flight.status ? 'Departed' : 'On Time' %></div>
 </section>
 <br>
-
-<th><a href="/flights/<%= flight._id %>/tickets/new">Ticketing</a></th>
+</div>
+<div class="boxtwo">
+<h1>Ticketing</h1>
 <% if (ticket.length) { %>
 <table>
     <thead>
@@ -33,12 +31,18 @@
         </tr>
         <% }); %>
     </tbody>
+    
 </table>
 <% } else { %>
 <h5>No Tickets Yet</h5>
 <% } %>
-
 <br>
+<a href="/flights/<%= flight._id %>/tickets/new">Add Tickets</a>
+</div>
+
+
+<div class="boxtwo">
+  <h1>Destinations</h1>
 <% if (flight.destinations.length) { %>
   <table>
     <thead>
@@ -50,6 +54,7 @@
       </tr>
     </thead>
     <tbody>
+      
       <% flight.destinations.forEach(function(f) { %>
         <tr>
           <form action="/flights/<%= f._id %>/<%= flight._id %>?_method=DELETE"
@@ -64,9 +69,10 @@
     </tbody>
   </table>
 <% } else { %>
+  
   <h5>No Destinations Yet</h5>
 <% } %>
-<br><br><h2>Destinations</h2>
+
  <form id="add-destination-form" method="POST"
    action="/flights/<%= flight._id %>/destinations">
    <label>Destination Airport:</label>
@@ -82,5 +88,5 @@
   </label>
   <input type="submit" value="Add Destination">
  </form>
-
+</div>
 <%- include('../partials/footer') %>

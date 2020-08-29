@@ -1,5 +1,5 @@
 body {
-  padding: 25px;
+  padding: 5px 5px -30px 5px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url(https://i.imgur.com/Zpx6rS1.jpg?2);
   background-size: cover;
@@ -7,53 +7,55 @@ body {
   background-attachment: fixed;
   color: black
 }
-.homeclass {
+.box {
+  text-align: center;
+  margin: 25% 40% -15% 0%;
+  border-radius: 5%;
+  border: 4px solid 46989B;
+  background: linear-gradient(to right, #AAD1F5 30%,rgb(196, 195, 190, .7), transparent);
+  width: 100%;
+  box-shadow:-10px 10px 15px #276DC2;
+}
+.boxtwo {
+  text-align: center;
+  border-radius: 5%;
+  border: 4px solid 46989B;
+  background: linear-gradient(to right, #AAD1F5 30%,rgb(196, 195, 190, .7), transparent);
+  width: 75%;
+  box-shadow:-10px 10px 15px #276DC2;
+  margin: 5% 15%;
+}
+.boxticket, .homebox, .boxflight{
   text-align: center;
   margin: 25%;
-  background-color: #B6CFE9;
   border-radius: 5%;
-  border: 10px solid #B6CFE9;
-  opacity: .73;
-  width: 400px;
+  border: 4px solid 46989B;
+  background: linear-gradient(to right, #AAD1F5 30%,rgb(196, 195, 190, .7), transparent);
+  width: 50%;
+  box-shadow:-10px 10px 15px #276DC2;
 }
-
-.index {
-  background-color: #B6CFE9;
-  opacity: .73;
-  border-radius: 3%;
-  height: 370px;
+nav {
+  height: 75px;
+  margin: -8px -50px;
+  padding: 0;
+  background-color: rgba(24, 26, 29, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-a {
-  color: black;
+nav a {
+  padding: 35px;
+  color: white;
 }
 th {
   padding: 35px;
   font-size: 16px;
+  
 }
 td {
   text-align: center;
   font-size: 13px;
 }
-nav {
-  width: 100%;
-  height: 65%;
-  background-color: rgba(255,255,255, .5);
-  border-radius: 5%;
-}
-img {
-  width: 40px;
-  height: 35px;
-  text-align: left;
-  position: relative;
-  left: -500px;
-}
 
-div {
-  width: 100%;
-}
-nav div {
-  text-align: right;
-}
-a {
-  padding: 10px;
-}
+
+

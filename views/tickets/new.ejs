@@ -3,7 +3,7 @@
 <a href="/flights">Return to Manifest</a>
 <form action="/flights/<%= flight %>/tickets" method="POST">
     
-
+<div class="boxticket">
     <h2>Select your Preferred Seat</h2>
 <label>Select Seat</label>
     <input name="seat" required pattern="[A-F][1-9]\d?">
@@ -13,6 +13,6 @@
       </label><br>
       <input type="submit" value="Purchase Ticket">
     </form>
-
+</div>
 
 <%- include('../partials/footer') %>
