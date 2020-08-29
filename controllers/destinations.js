@@ -7,7 +7,7 @@ module.exports = {
 
 function deleteDestination(req, res) {
     FlightsInfo.findById(req.params.flight, function(err, flight) {
-        console.log(`AAHHHHHH`, err)
+        console.log(`AAHHHHHH`, flight)
        let idx = flight.destinations.findIndex(function(obj) {
             return (obj._id == req.params.dest)
         })

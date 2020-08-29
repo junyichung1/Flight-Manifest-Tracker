@@ -4,11 +4,11 @@
   <h1>Flight Information</h1>
 <section id="show-page">
   
-  <div>Airport: <%= flight.airport %></div>
-  <div>Airline: <%= flight.airline %></div>
-  <div>Flight No.: <%= flight.flightNo %></div>
-  <div>Departure: <%= flight.departs %></div>
-  <div>Flight Status: <%= flight.status ? 'Departed' : 'On Time' %></div>
+  <div><u>Airport</u>: <%= flight.airport %></div>
+  <div><u>Airline</u>: <%= flight.airline %></div>
+  <div><u>Flight No.</u>: <%= flight.flightNo %></div>
+  <div><u>Departure</u>: <%= flight.departs %></div>
+  <div><u>Flight Status</u>: <%= flight.status ? 'Departed' : 'On Time' %></div>
 </section>
 <br>
 </div>
@@ -18,14 +18,20 @@
 <table>
     <thead>
         <tr>
-            <th>Seat Number</th>
-            <th>Price</th>
+            <th><u>Delete</u></th>
+            <th><u>Seat Number</u></th>
+            <th><u>Price</u></th>
             
         </tr>
     </thead>
     <tbody>
         <% ticket.forEach(function(t) { %>
         <tr>
+          <form action="/tickets/<%= t._id %>?_method=DELETE"
+            method="POST" class="delete-form"
+            >
+            <td><button type="submit">X</button></td>
+            </form>
             <td><%= t.seat %></td>
             <td>$<%= t.price %></td>
         </tr>
@@ -47,9 +53,9 @@
   <table>
     <thead>
       <tr>
-        <th>Delete</th>
-        <th>Destination Airport</th>
-        <th>Arrival</th>
+        <th><u>Delete</u></th>
+        <th><u>Destination Airport</u></th>
+        <th><u>Arrival</u></th>
         
       </tr>
     </thead>
@@ -72,7 +78,7 @@
   
   <h5>No Destinations Yet</h5>
 <% } %>
-
+<br>
  <form id="add-destination-form" method="POST"
    action="/flights/<%= flight._id %>/destinations">
    <label>Destination Airport:</label>
