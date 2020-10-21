@@ -1,0 +1,44 @@
+<%- include('../partials/header') %>
+
+
+    <body>
+  
+        <div class="boxflight">
+            <h2>Edit Flight</h2>
+        <form action="/flights/<%= flight._id %>?_method=PUT" method="POST">
+          <label>Airline:
+            <select name="airline" value="<%=flight.airline%>">
+                <option <%= flight.airline === "American" ? "selected":"" %> value="American">American</option>
+                <option <%= flight.airline === "Delta" ? "selected":"" %> value="Delta">Delta</option>
+                <option <%= flight.airline === "Southwest" ? "selected":"" %> value="Southwest">Southwest</option>
+                <option <%= flight.airline === "United" ? "selected":"" %> value="United">United</option>
+              </select>
+          </label><br>
+          <label>Airport:
+            <select name="airport">
+                <option <%= flight.airport === "ATL" ? "selected":"" %> value="ATL">ATL</option>
+                <option <%= flight.airport === "DFW" ? "selected":"" %> value="DFW">DFW</option>
+                <option <%= flight.airport === "DEN" ? "selected":"" %> value="DEN">DEN</option>
+                <option <%= flight.airport === "LAX" ? "selected":"" %> value="LAX">LAX</option>
+                <option <%= flight.airport === "SAN" ? "selected":"" %> value="SAN">SAN</option>
+              </select>
+          </label><br>
+          <label>Flight No.:
+            <input type="text" name="flightNo" value="<%=flight.flightNo%>" maxlength="4">
+          </label><br>
+          <label for="meeting-time">Departure Date:
+            <input type="datetime-local" name="departure" value="<%= departsDate %>">
+          </label>
+          <br>
+          <label for="status">Departed:
+              <input type="checkbox" name="status" <%= flight.status ? "checked" : "" %>>
+          </label>
+          <br>
+          <input type="submit" value="Edit Flight">
+        </form>
+        </div>
+        </body>
+
+</form>
+
+<%- include('../partials/footer') %>

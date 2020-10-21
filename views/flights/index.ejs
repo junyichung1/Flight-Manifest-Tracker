@@ -6,6 +6,7 @@
     <thead>
       <tr>
         <th><u>Delete</u></th>
+        <th><u>Edit</u></th>
         <th><u>Airline</u></th>
         <th><u>Airport</u></th>
         <th><u>Flight No.</u></th>
@@ -24,6 +25,7 @@
             <button type="submit">X</button>
             </form>
           </td>
+          <td><a href="/flights/<%= f._id %>/edit">Edit</a></td>
           <td><%= f.airline %></td>
           <td><%= f.airport %></td>
           <td><%= f.flightNo %></td>

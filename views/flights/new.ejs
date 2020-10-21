@@ -16,7 +16,7 @@
   <label>Airport:
     <select name="airport">
         <option value="ATL">ATL</option>
-        <option value="DFW">DWF</option>
+        <option value="DFW">DFW</option>
         <option value="DEN">DEN</option>
         <option value="LAX">LAX</option>
         <option value="SAN">SAN</option>
@@ -29,6 +29,10 @@
     <input type="datetime-local" name="departure" value="<%= departsDate %>">
   </label>
   <br>
+  <label for="status">Departed:
+    <input type="checkbox" name="status" <%= flight.status ? "checked" : "" %>>
+</label>
+<br>
   <input type="submit" value="Add Flight">
 </form>
 </div>

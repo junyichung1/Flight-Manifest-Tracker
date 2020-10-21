@@ -3,7 +3,18 @@ const FlightsInfo = require('../models/flight');
 module.exports = {
     create,
     delete: deleteDestination
+    // edit,
+    // update
 }
+// function update(req, res) {
+//     FlightsInfo.findByIdAndUpdate(req.params.id, function(err, flights) {
+//         res.redirect()
+//     })
+// }
+// function edit(req, res) {
+//     FlightsInfo. 
+//     res.render('flights/edit')
+// }
 
 function deleteDestination(req, res) {
     FlightsInfo.findById(req.params.flight, function(err, flight) {
